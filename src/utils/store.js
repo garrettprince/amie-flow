@@ -1,10 +1,11 @@
 import { atom } from "jotai";
 
+// Visibility
+const eventModalVisibility = atom(true);
+const flowVisibility = atom(false);
+const showColorPicker = atom(false);
+
 // Colors
 const selectedColor = atom("#D5EAFF");
 
-// Visibility
-const eventModalVisibility = atom(true);
-const showColorPicker = atom(false);
-
-export { showColorPicker, selectedColor, eventModalVisibility };
+export { showColorPicker, selectedColor, eventModalVisibility, flowVisibility };

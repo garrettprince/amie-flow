@@ -2,12 +2,14 @@
 import React, { useState } from "react";
 import FlowContainer from "./FlowContainer";
 import { AnimatePresence, motion } from "framer-motion";
-import { BoltIcon, CheckCircleIcon } from "@heroicons/react/24/outline";
+import { CheckCircleIcon } from "@heroicons/react/24/outline";
 import {
   ArrowPathIcon,
   EllipsisHorizontalIcon,
   LockClosedIcon,
+  LockOpenIcon,
   XMarkIcon,
+  BoltIcon,
 } from "@heroicons/react/24/solid";
 import ColorPicker from "./ColorPicker";
 import { useAtom } from "jotai";
@@ -15,13 +17,14 @@ import {
   eventModalVisibility,
   showColorPicker,
   selectedColor,
+  flowVisibility,
 } from "../../utils/store";
 
 export default function EventModule() {
-  const [isFlowShowing, setIsFlowShowing] = useState(false);
+  const [isFlowShowing, setIsFlowShowing] = useAtom(flowVisibility);
   const [color, setColor] = useAtom(selectedColor);
   const [isColorPickerShown, setIsColorPickerShown] = useAtom(showColorPicker);
-  const [locked, setLocked] = useState(false);
+  const [locked, setLocked] = useState(true);
   const [eventModalVisible, setEventModalVisible] =
     useAtom(eventModalVisibility);
 
@@ -38,7 +41,10 @@ export default function EventModule() {
               <div>Weekly Meeting</div>
             </div>
             <XMarkIcon
-              onClick={() => setEventModalVisible(false)}
+              onClick={() => {
+                setEventModalVisible(false);
+                setIsFlowShowing(false);
+              }}
               className="h-4 w-4 text-black/50 cursor-pointer"
             />
           </div>
@@ -75,13 +81,11 @@ export default function EventModule() {
 
           {/* Flow Section */}
           <section id="reactFlow">
-            <AnimatePresence>
-              {isFlowShowing && (
-                <motion.div>
-                  <FlowContainer />
-                </motion.div>
-              )}
-            </AnimatePresence>
+            {isFlowShowing && (
+              <div>
+                <FlowContainer />
+              </div>
+            )}
           </section>
 
           {/* Options Section */}
@@ -101,7 +105,17 @@ export default function EventModule() {
                 ></motion.div>
                 {isColorPickerShown && <ColorPicker />}
               </div>
-              <LockClosedIcon className="h-4 w-4 text-black/50" />
+              {locked ? (
+                <LockClosedIcon
+                  onClick={() => setLocked(false)}
+                  className="h-4 w-4 text-black/50 cursor-pointer"
+                />
+              ) : (
+                <LockOpenIcon
+                  onClick={() => setLocked(true)}
+                  className="h-4 w-4 text-black/50 cursor-pointer"
+                />
+              )}
               <ArrowPathIcon className="h-4 w-4 text-black/50" />
               <p className="text-xs font-bold text-black/60">24h</p>
             </div>
@@ -110,8 +124,8 @@ export default function EventModule() {
                 className="flex items-center space-x-1 cursor-pointer"
                 onClick={() => setIsFlowShowing(!isFlowShowing)}
               >
-                <BoltIcon className="h-4 w-4 text-black/60 " />
-                <p className="text-black/60 font-bold text-xs">
+                <BoltIcon className="h-3 w-3 text-black/60 hover:scale-105 hover:text-yellow-300 transition-all duration-200" />
+                <p className="text-black/60 font-bold text-xs transition-all duration-100">
                   {isFlowShowing ? "Close Flow" : "Flow"}
                 </p>
               </div>

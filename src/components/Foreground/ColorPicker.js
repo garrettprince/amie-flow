@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { atom, useAtom } from "jotai";
+import React from "react";
+import { useAtom } from "jotai";
 import { selectedColor, showColorPicker } from "../../utils/store";
 
 function ColorPicker() {
