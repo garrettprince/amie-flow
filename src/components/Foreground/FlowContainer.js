@@ -53,8 +53,9 @@ const initialNodes = [
     id: "4",
     type: "attendanceResult",
     data: {
-      applicationPhoto: "/account-a@2x.webp",
-      application: "Garrett",
+      applicationPhoto:
+        "png-transparent-chat-slack-slack-logo-social-media-icon-thumbnail.png",
+      application: "Slack",
     },
     position: { x: 35, y: 400 },
   },
@@ -62,8 +63,8 @@ const initialNodes = [
     id: "5",
     type: "attendanceResult",
     data: {
-      applicationPhoto: "/account-a@2x.webp",
-      application: "Garrett",
+      applicationPhoto: "Gmail_icon_(2020).svg.png",
+      application: "Gmail",
     },
     position: { x: 175, y: 200 },
   },

@@ -10,7 +10,7 @@ function AttendanceResultNode({ data }) {
           <div className="flex items-center space-x-1">
             <p className="text-xs">Send</p>
             <div className="bg-gray-100/60 rounded-full p-1 flex items-center">
-              <img className="h-4 w-4" src={data.applicationPhoto} alt="" />
+              <img className="h-3 w-3 ml-1" src={data.applicationPhoto} alt="" />
               <div className="text-xs font-bold  px-1">{data.application}</div>
             </div>
             <div className="text-xs">with body:</div>
