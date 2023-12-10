@@ -26,7 +26,7 @@ export default function FlowContainer() {
   );
 
   return (
-    <div className="shadow-xl w-96 h-96 rounded-xl p-3">
+    <div className=" w-80 h-80 rounded-xl p-1">
       <ReactFlow
         nodes={nodes}
         edges={edges}
