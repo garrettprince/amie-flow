@@ -1,8 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
-import EventModule from "../components/EventModule";
+import EventModule from "../components/Foreground/EventModule";
+import { useAtom } from "jotai";
+import { eventModalVisibility } from "../utils/store";
 
 export default function Home() {
+  const [eventModalVisible, setEventModalVisible] =
+    useAtom(eventModalVisibility);
+
   return (
     <div>
       <Head>
@@ -11,7 +16,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div>test</div>
+      <div className="flex justify-center">
+        <button
+          onClick={() => setEventModalVisible(true)}
+          className="bg-gray-100 rounded-xl py-2 px-3 m-4"
+        >
+          Show Modal
+        </button>
+      </div>
       <div className="flex justify-center">
         <EventModule />
       </div>

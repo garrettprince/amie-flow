@@ -1,6 +1,10 @@
 import { atom } from "jotai";
 
-const testAtom = atom(0);
+// Colors
+const selectedColor = atom("#D5EAFF");
 
-export { testAtom }
+// Visibility
+const eventModalVisibility = atom(true);
+const showColorPicker = atom(false);
 
+export { showColorPicker, selectedColor, eventModalVisibility };
