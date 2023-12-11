@@ -6,11 +6,7 @@ function AttendanceConditionalNode({ data }) {
   return (
     <div className="px-4 py-2 shadow-lg bg-white rounded-lg">
       <div className="flex">
-        {/* <div className="rounded-full w-12 h-12 flex justify-center items-center bg-gray-100">
-          
-        </div> */}
         <div className="">
-          {/* <div className="text-[0.6rem] font-bold mb-1">{data.actionTitle}</div> */}
           <div className="flex items-center space-x-1">
             <div className="text-xs ">If</div>
             <div className="bg-gray-100/60 rounded-full p-1 flex items-center">

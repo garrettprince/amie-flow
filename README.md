@@ -1,34 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Amie Flow
 
-## Getting Started
+![Screenshot](./public/AmieFlow.png)
 
-First, run the development server:
+## Table of Contents
 
-```bash
+- [General Info](#general-information)
+- [Instructions](#instructions)
+- [Technologies Used](#technologies-used)
+- [Notes](#notes)
+
+## General Information
+
+I tried to imagine a way for more complex decision making to be done in a simple and beautiful format. Node and decision tress are typically ugly, so thought it might be fun to make it look a bit more approachable.
+
+Note: This is only a work in progress and proof of concept. I have not yet implemented the logic to make add and manipulate nodes as well as complex node logic.
+
+## Instructions
+
+You can view the live demo [here](https://amie-flow-garrettprince.vercel.app/). Click on the 'Flow' button to see the flow chart section.
+
+Or clone the repo using the following command:
+
+
+```
+git clone https://github.com/garrettprince/amie-flow
+```
+Install the dependencies using:
+```
+npm install
+```
+And run the development server using:
+```
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- Next.js v14.0.4
+- Jotai v2.6.0
+- Tailwind v3.3.6
+- Framer Motion v10.16.16
+- React Flow v11.10.1
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Notes
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- I spent about 8 hours total over 2 days on this project.
+- Had a blast understanding and stying custom nodes from the React Flow library.
+- Would love to hook it up to a database and add the logic to add and manipulate nodes that persist after authentication from a single user.
+- In addition, I can see this logic living in a separate section if these types of decision trees can clog up an invite interface.
