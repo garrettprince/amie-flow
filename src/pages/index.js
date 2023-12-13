@@ -16,15 +16,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex justify-center">
-        <button
-          onClick={() => setEventModalVisible(true)}
-          className="bg-gray-100 rounded-xl py-2 px-3 m-4"
-        >
-          Show Modal
-        </button>
-      </div>
-      <div className="flex justify-center">
+      {!eventModalVisible && (
+        <div className="flex justify-center">
+          <button
+            onClick={() => setEventModalVisible(true)}
+            className="bg-gray-100 rounded-xl py-2 px-3 m-4"
+          >
+            Show Modal
+          </button>
+        </div>
+      )}
+
+      <div className="flex justify-center my-10">
         <EventModule />
       </div>
     </div>

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
+    "@supabase/supabase-js": "^2.39.0",
     "framer-motion": "^10.16.16",
     "jotai": "^2.6.0",
     "next": "14.0.4",

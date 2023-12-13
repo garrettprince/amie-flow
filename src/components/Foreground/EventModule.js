@@ -19,6 +19,7 @@ import {
   selectedColor,
   flowVisibility,
 } from "../../utils/store";
+import HeadsupContainer from "../Headsup/HeadsupContainer";
 
 export default function EventModule() {
   const [isFlowShowing, setIsFlowShowing] = useAtom(flowVisibility);
@@ -69,6 +70,19 @@ export default function EventModule() {
               <p className="text-xs font-bold text-black/25">WHERE</p>
               <p className="text-sm">https://meet.google.com/qwn-fdskk-...</p>
             </div>
+
+            {/* Description/Context Section */}
+            <div className="bg-gray-100/60 rounded-lg p-2 space-y-1">
+              <p className="text-xs font-bold text-black/25">DESCRIPTION</p>
+              <div className="flex justify-between">
+                <p className="text-sm w-48">
+                  This is a test to see what the description and video recording
+                  context tool looks like in action. Here is another sentence to see what more words look like.
+                </p>
+                <HeadsupContainer />
+              </div>
+            </div>
+
             {/* Duration */}
             <div className="flex space-x-1">
               <div className="bg-gray-100/60 rounded-lg p-2 space-y-1 w-full">
@@ -82,6 +96,7 @@ export default function EventModule() {
                 <p className="text-xs font-bold text-black/25">07 Feb 2022</p>
               </div>
             </div>
+
             {/* Flow Section */}
             <section id="reactFlow">
               <AnimatePresence>
